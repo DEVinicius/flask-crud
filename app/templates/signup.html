@@ -8,6 +8,20 @@
         <div class="row">
             <div class="col md-12">
                 <div class="jumbotron p-3">
+                    {% with messages = get_flashed_messages() %}
+                        {% if messages %}
+                            {% for message in messages%}
+                                <div class="alert alert-warning alert-dismissable">
+                                    <button type="button" class="close" data-dismiss="alert" area-label="close">
+                                        <span aria-hidden="true">
+                                            X
+                                        </span>
+                                    </button>
+                                    {{message}}
+                                </div>
+                            {% endfor %}
+                        {% endif%}
+                    {% endwith %}
                     <form action="{{url_for('insertCompany')}}" method="POST">
                         <div class="form-group">
                             <label for="name">Name</label>
