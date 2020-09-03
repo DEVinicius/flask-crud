@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% include "header.html" %}
+
+{% block title %} Home {% endblock %}
+
+{% block body %} 
+    <div class="container">
+        <div class="row">
+            <div class="col md-12">
+                <div class="jumbotron p-3">
+
+                    <form action="" method="post">
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" name="email" class="form-control1" required="1">
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" name="password" class="form-control1" required="1">
+                        </div>
+
+                        <div class="form-group">
+                            <a href="" class="btn btn-primary btn-lg btn-block" role="button" aria-pressed="true">Login</a>
+                            <a href="{{url_for('signup')}}" class="btn btn-secondary btn-lg btn-block" role="button" aria-pressed="true">Sign Up</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
